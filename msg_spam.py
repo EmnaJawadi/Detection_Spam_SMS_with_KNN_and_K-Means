@@ -85,14 +85,13 @@ st.write("### Tableau de Contingence")
 st.dataframe(contingency_table)
 
 # =============================================================================
-# ÉTAPE 4 : KNN (CORRIGÉ)
+# ÉTAPE 4 : KNN
 # =============================================================================
 st.header("3. Classification Supervisée (KNN)")
 
 X_train, X_test, y_train, y_test = train_test_split(X_tfidf, y, test_size=0.25, random_state=42)
 
 
-# AJOUT DU "_" DEVANT X_train POUR EVITER L'ERREUR DE HASHAGE
 @st.cache_resource
 def train_knn_grid_search(_X_train, y_train):
     param_grid = {'n_neighbors': list(range(1, 21))}
